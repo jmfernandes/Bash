@@ -4,9 +4,7 @@ create_file()
   extension=$(contains ${1##*.} "${languages[@]}")
   now="$(date +'%b %d, %Y')"
   if [[ $extension == "0" ]]; then
-    echo "
-    File Successfully Ran
-    "
+    echo "# Successfully created $1"
     if [[ ${1##*.} == 'py' ]]; then
       echo "########################################
 #
@@ -64,7 +62,6 @@ create_file()
     "
   fi
 
-echo "!====== End File Run ======!"
 }
 
 function contains(){
@@ -77,8 +74,6 @@ function contains(){
 
 languages=("py" "cs" "js")
 
-echo "!====== Begin File Run ======!"
-
 if [ $# -ne 1 ]
 then
     echo "
@@ -86,22 +81,19 @@ then
 
     example:
         sh make_file.sh my_file.py
-
-!====== End File Run ======!"
+"
 else
   if [[ $1 == *"."* ]]; then
     if [ -e $1 ]; then
       echo "
-      !!!ERROR!!! The file $1 already exists
-
-!====== End File Run ======!"
+    !!!ERROR!!! The file $1 already exists
+"
     else
     create_file $1
   fi
   else
     echo "
     !!!ERROR!!! need to include the file extension
-
-!====== End File Run ======!"
+"
   fi
 fi
