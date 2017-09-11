@@ -1,4 +1,4 @@
-
+#!/bin/bash
 create_file()
 {
   extension=$(contains ${1##*.} "${languages[@]}")
