@@ -23,7 +23,41 @@ create_file()
 ########################################" >> $1
     fi
     if [[ ${1##*.} == 'js' ]]; then
-      echo "/**
+      echo "/*
+*
+* $1
+*
+* Description:
+*
+*
+* Author: Josh Fernandes
+*
+* Created: $now
+*
+* Updated:
+*
+*
+*/" >> $1
+    fi
+    if [[ ${1##*.} == 'cpp' ]]; then
+      echo "/*
+*
+* $1
+*
+* Description:
+*
+*
+* Author: Josh Fernandes
+*
+* Created: $now
+*
+* Updated:
+*
+*
+*/" >> $1
+    fi
+    if [[ ${1##*.} == 'hpp' ]]; then
+      echo "/*
 *
 * $1
 *
@@ -72,7 +106,7 @@ function contains(){
   return 1
 }
 
-languages=("py" "cs" "js")
+languages=("py" "cs" "js" "cpp" "hpp")
 
 if [ $# -ne 1 ]
 then
