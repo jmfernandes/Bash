@@ -39,6 +39,23 @@ create_file()
 *
 */" >> $1
     fi
+    if [[ ${1##*.} == 'ts' ]]; then
+      echo "/*
+*
+* $1
+*
+* Description:
+*
+*
+* Author: Josh Fernandes
+*
+* Created: $now
+*
+* Updated:
+*
+*
+*/" >> $1
+    fi
     if [[ ${1##*.} == 'cpp' ]]; then
       echo "/*
 *
@@ -90,6 +107,22 @@ create_file()
 //
 ////////////////////////////////////////" >> $1
     fi
+    if [[ ${1##*.} == 'html' ]]; then
+      echo '<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <meta name="description" content="A website">
+    <meta name="author" content="Josh Fernandes">
+  </head>
+  <body>
+
+  <!-- Necessary Library Scripts -->
+  </body>
+</html>' >> $1
+    fi
   else
     echo "
     !!!ERROR!!! The valid extionsions are: " ${languages[@]} "
@@ -106,7 +139,7 @@ function contains(){
   return 1
 }
 
-languages=("py" "cs" "js" "cpp" "hpp")
+languages=("py" "cs" "js" "ts" "cpp" "hpp" "html")
 
 if [ $# -ne 1 ]
 then
