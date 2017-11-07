@@ -90,6 +90,23 @@ create_file()
 *
 */" >> $1
     fi
+    if [[ ${1##*.} == 'txt' ]]; then
+      echo "/*
+*
+* $1
+*
+* Description:
+*
+*
+* Author: Josh Fernandes
+*
+* Created: $now
+*
+* Updated:
+*
+*
+*/" >> $1
+    fi
     if [[ ${1##*.} == 'cs' ]]; then
       echo "////////////////////////////////////////
 //
@@ -139,7 +156,7 @@ function contains(){
   return 1
 }
 
-languages=("py" "cs" "js" "ts" "cpp" "hpp" "html")
+languages=("py" "cs" "js" "ts" "cpp" "hpp" "html" "txt")
 
 if [ $# -ne 1 ]
 then
