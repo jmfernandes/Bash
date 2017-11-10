@@ -1,4 +1,8 @@
 #!/bin/bash
+languages=("py" "cs" "js" "ts" "cpp" "hpp" "html" "txt")
+
+username="John Smith"
+
 create_file()
 {
   extension=$(contains ${1##*.} "${languages[@]}")
@@ -13,7 +17,7 @@ create_file()
 # Description:
 #
 #
-# Author: Josh Fernandes
+# Author: $username
 #
 # Created: $now
 #
@@ -30,7 +34,7 @@ create_file()
 * Description:
 *
 *
-* Author: Josh Fernandes
+* Author: $username
 *
 * Created: $now
 *
@@ -47,7 +51,7 @@ create_file()
 * Description:
 *
 *
-* Author: Josh Fernandes
+* Author: $username
 *
 * Created: $now
 *
@@ -64,7 +68,7 @@ create_file()
 * Description:
 *
 *
-* Author: Josh Fernandes
+* Author: $username
 *
 * Created: $now
 *
@@ -81,7 +85,7 @@ create_file()
 * Description:
 *
 *
-* Author: Josh Fernandes
+* Author: $username
 *
 * Created: $now
 *
@@ -98,7 +102,7 @@ create_file()
 * Description:
 *
 *
-* Author: Josh Fernandes
+* Author: $username
 *
 * Created: $now
 *
@@ -115,7 +119,7 @@ create_file()
 // Description:
 //
 //
-// Author: Josh Fernandes
+// Author: $username
 //
 // Created: $now
 //
@@ -132,7 +136,7 @@ create_file()
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <meta name="description" content="A website">
-    <meta name="author" content="Josh Fernandes">
+    <meta name="author" content="'$username'">
   </head>
   <body>
 
@@ -155,8 +159,6 @@ function contains(){
   echo 1
   return 1
 }
-
-languages=("py" "cs" "js" "ts" "cpp" "hpp" "html" "txt")
 
 if [ $# -ne 1 ]
 then
